@@ -35,7 +35,7 @@ This Python script interacts with NASA's Near Earth Object (NEO) API to retrieve
    ```bash
    python -m venv ven 
 
-   This command will create a new folder named venv in your project directory, which contains the isolated Python environment.
+This command will create a new folder named venv in your project directory, which contains the isolated Python environment.
 
 3. **Activate the Virtual Environment**:
    Now that the virtual environment is created, you need to activate it. Run the following command:
@@ -43,7 +43,7 @@ This Python script interacts with NASA's Near Earth Object (NEO) API to retrieve
    ```bash
    venv\Scripts\activate
 
-   Once activated, your command prompt will change to indicate that you are now working within the venv environment. You should see (venv) at the beginning of your command line.
+Once activated, your command prompt will change to indicate that you are now working within the venv environment. You should see (venv) at the beginning of your command line.
 
 4. **Install Required Libraries**:
    Make sure you have the necessary libraries installed. You can do this via pip:
