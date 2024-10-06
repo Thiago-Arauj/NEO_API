@@ -21,13 +21,37 @@ This Python script interacts with NASA's Near Earth Object (NEO) API to retrieve
 
 ### Step 1: Setup Your Environment
 
-1. **Install Required Libraries**:
+#### Setting Up a Python Virtual Environment (venv)
+
+1. **Navigate to Your Project Directory**:
+   Before creating a virtual environment, ensure you are in the correct project directory where you want to set it up. Use the following command to navigate to your project folder:
+
+   ```bash
+   cd path/to/your/project-directory
+
+2. **Create the Virtual Environment**:
+   To create a virtual environment named venv, run the following command:
+
+   ```bash
+   python -m venv ven 
+
+   This command will create a new folder named venv in your project directory, which contains the isolated Python environment.
+
+3. **Activate the Virtual Environment**:
+   Now that the virtual environment is created, you need to activate it. Run the following command:
+
+   ```bash
+   venv\Scripts\activate
+
+   Once activated, your command prompt will change to indicate that you are now working within the venv environment. You should see (venv) at the beginning of your command line.
+
+4. **Install Required Libraries**:
    Make sure you have the necessary libraries installed. You can do this via pip:
 
    ```bash
    pip install -r "requirements.txt"
 
-2. **Create a .env File:**:
+5. **Create a .env File:**:
     In your project directory, create a .env file to store your NASA API key:
     
     ```bash
@@ -43,7 +67,7 @@ This Python script interacts with NASA's Near Earth Object (NEO) API to retrieve
 1. **Execute the Script**:
     Run the script in your terminal or preferred IDE:
     ```bash
-    python your_script_name.py
+    python API_filter_to_excel.py
 
 2. **Input Prompts**:
     Follow the prompts to enter:
