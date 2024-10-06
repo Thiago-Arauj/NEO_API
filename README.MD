@@ -37,7 +37,7 @@ This Python script interacts with NASA's Near Earth Object (NEO) API to retrieve
 
    - `API Interaction`: The script constructs a URL to fetch asteroid data based on user-defined start and end dates.  
    - `Data Filtering`: The function initial_filter() processes the JSON response from the API, ignoring certain keys (links, nasa_jpl_url, sentry_data) while focusing on others like estimated_diameter and close_approach_data.
-   -`Excel File Creation`:The filtered data is saved into an Excel file using the toDataFrame() function, which creates separate sheets for each date.
+   - `Excel File Creation`:The filtered data is saved into an Excel file using the toDataFrame() function, which creates separate sheets for each date.
         
 ### Step 3: Run the Script
 1. **Execute the Script**:
