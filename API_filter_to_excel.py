@@ -2,10 +2,12 @@ import requests
 import pandas as pd
 import os
 from dotenv import load_dotenv
+import asyncio
 
-def initial_filter(response):
+async def initial_filter(url):
     searchIgnore = ('links', 'nasa_jpl_url', 'sentry_data')
     secondSearch = ('estimated_diameter', 'close_approach_data')
+    response = requests.get(url)
 
     if response.status_code == 200:
         dictionaries = {}
@@ -59,24 +61,36 @@ def toDataFrame(dictionaries, path):
     else:
         print(dictionaries)
 
-def pathCorrecting(init_path, name):
-    path = init_path.replace("\ ", "/")
-    path += f"/{name}.xlsx"
-    return path
-
-def main():
-    load_dotenv(".env")
-    api_key = os.getenv("API-KEY")
-    start_date = input("Selecione a data no modelo aaaa-mm-dd: ")
-    end_date = input("Digite a data de fim no mesmo modelo: ") 
-    url = f"https://api.nasa.gov/neo/rest/v1/feed?start_date={start_date}&end_date={end_date}&api_key={api_key}"
-
-    response = requests.get(url)
+async def entryCollect():
     init_path = input("Cole aqui o caminho onde deseja que apareça o arquivo: ")
     name = input("Digite agora o nome do arquivo que deseja: ")
     path = pathCorrecting(init_path, name)
 
-    toDataFrame(initial_filter(response), path)
+    return path
 
-main()
+def pathCorrecting(init_path, name):
+    path = init_path.replace("\ ", "/")
+    path += f"/{name}.xlsx"
+
+    return path
+
+async def main():
+    load_dotenv(".env")
+    start_date = input("Selecione a data no modelo aaaa-mm-dd: ")
+    end_date = input("Digite a data de fim no mesmo modelo: ")
+    api_key = os.getenv("API-KEY")
+    url = f"https://api.nasa.gov/neo/rest/v1/feed?start_date={start_date}&end_date={end_date}&api_key={api_key}"
+    
+    outputs = await asyncio.gather(
+        entryCollect(),
+        initial_filter(url)
+    )
+    
+    path, answer = outputs
+
+    
+
+    toDataFrame(answer, path)
+
+asyncio.run(main())
     
