@@ -25,7 +25,7 @@ This Python script interacts with NASA's Near Earth Object (NEO) API to retrieve
    Make sure you have the necessary libraries installed. You can do this via pip:
 
    ```bash
-   pip install requests pandas python-dotenv
+   pip install -r "requirements.txt"
 
 2. **Create a .env File:**:
     In your project directory, create a .env file to store your NASA API key:
