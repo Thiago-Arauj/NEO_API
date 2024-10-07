@@ -82,4 +82,4 @@ Once activated, your command prompt will change to indicate that you are now wor
 ## Conclusion and example
    This script provides a practical way to access and analyze asteroid data from NASA's API. By leveraging asynchronous programming and Pandas for data handling, it efficiently processes potentially large datasets while maintaining clarity and organization in output files. Feel free to modify or extend this code for additional functionalities or analyses!
    
-<img src="/images/exemple1.png" alt="Example Spreadsheet" style="width:50%">
+<img src="/images/exemple1.png" alt="Example Spreadsheet" style="width:100%">
